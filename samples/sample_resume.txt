@@ -1,0 +1,38 @@
+Alex Sharma
+alex.sharma@example.com | +91 98765 43210 | linkedin.com/in/alex-sharma-dev | github.com/alexsharma-dev
+Bengaluru, India
+
+SUMMARY
+MCA student and full-stack developer who builds web and mobile apps with React, FastAPI and Node.js.
+
+EDUCATION
+Master of Computer Applications, Example University, Bengaluru (2025 - 2027) - CGPA 8.6
+Bachelor of Computer Applications, Sample College (2022 - 2025) - 82%
+
+EXPERIENCE
+Software Engineering Intern, Acme Labs (May 2026 - Jul 2026)
+- Built a REST API in FastAPI and PostgreSQL that served 2,000+ daily requests
+- Reduced page load time by 35% by adding Redis caching to slow endpoints
+- Responsible for writing documentation for the team
+- Worked on bug fixes in the React dashboard
+
+PROJECTS
+Voice Translator App | React Native, FastAPI, WebSockets
+- Developed a real-time voice translation app supporting 12 languages
+- Designed a WebSocket pipeline that cut translation latency to under 800 ms
+
+PG Management System | React Native, Node.js, Express, MongoDB
+- Created tenant and admin apps for rent, meals and complaints used by 40 residents
+- Helped with deploying the backend on AWS using Docker
+
+Law Section Mapper | FastAPI, React, TypeScript, RAG, Docker
+- Implemented a RAG search that maps old IPC sections to new BNS sections with evidence
+- Wrote 60 unit tests with pytest and set up GitHub Actions CI
+
+SKILLS
+Languages: Python, JavaScript, TypeScript, Java, SQL
+Frameworks: React, React Native, FastAPI, Node.js, Express
+Tools: Git, Docker, PostgreSQL, MongoDB, Redis, Linux
+
+CERTIFICATIONS
+AWS Cloud Practitioner (2026)

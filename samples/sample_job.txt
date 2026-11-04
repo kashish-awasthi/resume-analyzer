@@ -1,0 +1,16 @@
+Software Engineer - Backend (New Grad)
+
+We are looking for a backend engineer to build scalable services for our payments platform.
+
+Requirements:
+- Strong programming skills in Python or Go
+- Experience building REST APIs with FastAPI, Django or Flask
+- Hands-on with PostgreSQL and Redis
+- Familiarity with Docker, Kubernetes and AWS
+- Understanding of data structures, algorithms and system design
+- Experience writing unit tests and working with CI/CD pipelines
+
+Nice to have:
+- Exposure to Kafka or other messaging systems for payments workflows
+- Experience with GraphQL
+- Interest in scalable, reliable payments services and monitoring

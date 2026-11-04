@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume Analyzer</title>
+  <meta name="description" content="Score your resume, match it to a job description, and get specific fixes.">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <h1>Resume Analyzer</h1>
+      <p class="tagline">Score your resume like an ATS would, match it to a job, and get specific fixes.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <form id="form" class="card input-card">
+      <div class="field">
+        <label>Your resume</label>
+        <label id="drop" class="drop" for="file">
+          <input id="file" name="file" type="file" accept=".pdf,.docx,.txt,.md" hidden>
+          <span id="drop-text"><strong>Choose a file</strong> or drag it here<br><small>PDF, DOCX or TXT, up to 5 MB</small></span>
+        </label>
+        <details class="paste">
+          <summary>Or paste the text instead</summary>
+          <textarea id="resume_text" name="resume_text" rows="8" placeholder="Paste your resume text here"></textarea>
+        </details>
+      </div>
+
+      <div class="field">
+        <label for="job_description">Job description <span class="muted">(optional, but gives a match score)</span></label>
+        <textarea id="job_description" name="job_description" rows="7" placeholder="Paste the job posting you're applying for"></textarea>
+      </div>
+
+      <div class="actions">
+        <button id="submit" type="submit" class="primary">Analyze resume</button>
+        <button id="sample" type="button" class="ghost">Try a sample</button>
+      </div>
+      <p id="error" class="error" role="alert" hidden></p>
+    </form>
+
+    <section id="results" hidden>
+      <div class="grid top-grid">
+        <div class="card score-card">
+          <div class="ring" id="ring"><span id="score">0</span><small>/100</small></div>
+          <div>
+            <p class="grade">Grade <strong id="grade">-</strong></p>
+            <p class="muted" id="score-caption"></p>
+          </div>
+        </div>
+        <div class="card" id="match-card" hidden>
+          <h2>Job match <span class="pill" id="match-pct"></span></h2>
+          <h3>Skills you have</h3>
+          <div class="chips ok" id="matched"></div>
+          <h3>Skills the job wants that are missing</h3>
+          <div class="chips bad" id="missing"></div>
+          <h3>Job keywords not in your resume</h3>
+          <div class="chips warn" id="missing-kw"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Score breakdown</h2>
+        <div id="breakdown"></div>
+      </div>
+
+      <div class="card">
+        <h2>Top fixes</h2>
+        <ol id="suggestions" class="suggestions"></ol>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h2>Skills found</h2>
+          <div id="skills"></div>
+        </div>
+        <div class="card">
+          <h2>Checklist</h2>
+          <ul id="checklist" class="checklist"></ul>
+          <h2 class="spaced">Stats</h2>
+          <dl id="stats" class="stats"></dl>
+        </div>
+      </div>
+
+      <div class="card ai-card">
+        <div class="ai-head">
+          <div>
+            <h2>AI review</h2>
+            <p class="muted">Get a recruiter-style review and rewritten bullet points from an AI model.</p>
+          </div>
+          <button id="ai-btn" type="button" class="primary">Get AI review</button>
+        </div>
+        <p id="ai-off" class="muted" hidden>AI review is off. Set <code>ANTHROPIC_API_KEY</code> and <code>AI_MODEL</code> on the server to turn it on.</p>
+        <p id="ai-error" class="error" hidden></p>
+        <div id="ai-result" hidden></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    Built with FastAPI. Your resume is processed in memory and never stored.
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
